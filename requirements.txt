@@ -1,0 +1,11 @@
+# Logic programming (ASP solver with Python API)
+clingo>=5.8
+
+# OWL from Python (load ontology, run HermiT/Pellet, query) — needs Java on PATH
+owlready2>=0.47
+
+# RDF graphs + SPARQL queries over the ontology
+rdflib>=7.0
+
+# Wikidata SPARQL queries
+SPARQLWrapper>=2.0

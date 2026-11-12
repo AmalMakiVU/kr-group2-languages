@@ -1,0 +1,10 @@
+# Languages by ISO 639-3 code, with Glottolog code and writing system.
+# Run at https://query.wikidata.org  (edit the VALUES list to our sample)
+# P220 = ISO 639-3 code, P1394 = Glottolog code, P282 = writing system
+SELECT ?lang ?langLabel ?iso ?glottocode ?script ?scriptLabel WHERE {
+  VALUES ?iso { "nld" "deu" "eng" "arb" "cmn" "jpn" "tur" "fin" }
+  ?lang wdt:P220 ?iso .
+  OPTIONAL { ?lang wdt:P1394 ?glottocode . }
+  OPTIONAL { ?lang wdt:P282 ?script . }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
