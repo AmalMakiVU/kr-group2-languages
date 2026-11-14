@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/amalmaki/ontologies/2026/10/untitled-ontology-3/"
+     xml:base="http://www.semanticweb.org/amalmaki/ontologies/2026/10/untitled-ontology-3/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/group2/languages/core"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/core#belongsTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#LanguageFamily"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#concernsFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/core#concernsFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Universal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#hasFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/core#hasFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#hasStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/core#hasStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#EGIDSLevel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#inRegion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/core#inRegion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Country"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#Region"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#spokenIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/core#spokenIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#subgroupOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/core#subgroupOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#LanguageFamily"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#LanguageFamily"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#usesScript -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/core#usesScript">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#Country -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#Country"/>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#EGIDSLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#EGIDSLevel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#Feature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#Feature"/>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#Language -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#Language"/>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#LanguageFamily -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#LanguageFamily"/>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#Region -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#Region"/>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#Script -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#Script"/>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#Universal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#Universal"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Country"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#EGIDSLevel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Feature"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Language"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#LanguageFamily"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Region"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Script"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Universal"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
