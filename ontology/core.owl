@@ -22,20 +22,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/group2/languages/core#belongsTo -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/core#belongsTo">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#LanguageFamily"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#belongsTo"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#subgroupOf"/>
-        </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/group2/languages/core#concernsFeature -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/core#concernsFeature">
@@ -52,6 +38,14 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/core#hasMember">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/group2/languages/core#memberOfFamily"/>
     </owl:ObjectProperty>
     
 
@@ -73,6 +67,20 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Country"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#Region"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/core#memberOfFamily -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/core#memberOfFamily">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#LanguageFamily"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#memberOfFamily"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#subgroupOf"/>
+        </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
@@ -202,7 +210,7 @@
     <!-- http://www.semanticweb.org/group2/languages/core#Dutch -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/core#Dutch">
-        <core:belongsTo rdf:resource="http://www.semanticweb.org/group2/languages/core#WestGermanic"/>
+        <core:memberOfFamily rdf:resource="http://www.semanticweb.org/group2/languages/core#WestGermanic"/>
     </owl:NamedIndividual>
     
 

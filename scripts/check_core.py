@@ -10,8 +10,8 @@ Save your work in Protégé first: the script reads the file on disk.
 Checks
     1  consistent: HermiT finds no contradiction and no unsatisfiable class
     2  disjointness: an individual typed Language AND LanguageFamily must make the KB inconsistent
-    3  inference: Dutch belongsTo WestGermanic, WestGermanic subgroupOf Germanic
-       -> HermiT must infer Dutch is a Language and Dutch belongsTo Germanic
+    3  inference: Dutch memberOfFamily WestGermanic, WestGermanic subgroupOf Germanic
+       -> HermiT must infer Dutch is a Language and Dutch memberOfFamily Germanic
 
 Exit code 0 = all checks pass, 1 = a check failed or the file could not be checked.
 Checks 2 and 3 add test individuals in memory only; the file on disk is never changed.
@@ -117,7 +117,7 @@ def check_disjoint(path: Path):
 def check_inference(path: Path):
     world, onto = load(path)
     language = find(world, "Language")
-    belongs, subgroup = find(world, "belongsTo"), find(world, "subgroupOf")
+    belongs, subgroup = find(world, "memberOfFamily"), find(world, "subgroupOf")
     with onto:
         thing = onto.world["http://www.w3.org/2002/07/owl#Thing"]
         dutch, west, germanic = thing("TestDutch"), thing("TestWestGermanic"), thing("TestGermanic")
@@ -126,12 +126,12 @@ def check_inference(path: Path):
     reason(world)
     missing = []
     if language not in dutch.is_a:
-        missing.append("Dutch is a Language (domain of belongsTo)")
+        missing.append("Dutch is a Language (domain of memberOfFamily)")
     if germanic not in getattr(dutch, belongs.python_name):
-        missing.append("Dutch belongsTo Germanic (property chain)")
+        missing.append("Dutch memberOfFamily Germanic (property chain)")
     if missing:
         return False, "not inferred: " + "; ".join(missing)
-    return True, "Dutch inferred as Language and as belongsTo Germanic"
+    return True, "Dutch inferred as Language and as memberOfFamily Germanic"
 
 
 CHECKS = [
