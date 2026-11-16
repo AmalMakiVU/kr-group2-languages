@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/amalmaki/ontologies/2026/10/untitled-ontology-10/"
+     xml:base="http://www.semanticweb.org/amalmaki/ontologies/2026/10/untitled-ontology-10/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:languages="http://www.semanticweb.org/group2/languages/languages#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/group2/languages/languages">
+        <owl:imports rdf:resource="http://www.semanticweb.org/group2/languages/core"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#hasAncestor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/languages#hasAncestor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#hasParentLanguage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/languages#hasParentLanguage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/group2/languages/languages#hasAncestor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#IndoEuropeanLanguage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/languages#IndoEuropeanLanguage">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Language"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/group2/languages/languages#hasAncestor"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/group2/languages/languages#ProtoIndoEuropean"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#ProtoLanguage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/languages#ProtoLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#French -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#French">
+        <languages:hasParentLanguage rdf:resource="http://www.semanticweb.org/group2/languages/languages#Latin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#Latin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#Latin">
+        <languages:hasParentLanguage rdf:resource="http://www.semanticweb.org/group2/languages/languages#ProtoIndoEuropean"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#ProtoIndoEuropean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#ProtoIndoEuropean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/languages#ProtoLanguage"/>
+        <languages:hasParentLanguage rdf:resource="http://www.semanticweb.org/group2/languages/languages#ProtoIndoEuropean"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

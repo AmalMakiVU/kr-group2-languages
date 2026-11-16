@@ -58,6 +58,8 @@ def load(path: Path):
     """Load the file into a fresh World, so each check starts clean."""
     import owlready2 as owl
 
+    if str(path.parent) not in owl.onto_path:  # resolve owl:imports (e.g. core) from the same folder
+        owl.onto_path.append(str(path.parent))
     world = owl.World()
     try:
         onto = world.get_ontology(path.as_uri()).load()
