@@ -136,10 +136,30 @@ def check_inference(path: Path):
     return True, "Dutch inferred as Language and as memberOfFamily Germanic"
 
 
+def check_genealogy(path: Path):
+    """languages.owl only: French -> Latin -> ProtoIndoEuropean must make both IndoEuropeanLanguage."""
+    world, onto = load(path)
+    if world.search_one(iri="*#IndoEuropeanLanguage") is None:
+        return True, "skipped (no IndoEuropeanLanguage in this file; run it on languages.owl)"
+    ie, parent = find(world, "IndoEuropeanLanguage"), find(world, "hasParentLanguage")
+    pie = find(world, "ProtoIndoEuropean")
+    with onto:
+        thing = onto.world["http://www.w3.org/2002/07/owl#Thing"]
+        french, latin = thing("TestFrench"), thing("TestLatin")
+        french.__setattr__(parent.python_name, [latin])
+        latin.__setattr__(parent.python_name, [pie])
+    reason(world)
+    missing = [name for name, ind in (("French", french), ("Latin", latin)) if ie not in ind.is_a]
+    if missing:
+        return False, "not inferred as IndoEuropeanLanguage: " + ", ".join(missing) + " (transitivity, hierarchy or nominal?)"
+    return True, "French and Latin inferred as IndoEuropeanLanguage (two steps up to the nominal)"
+
+
 CHECKS = [
     ("1 consistent", check_consistent),
     ("2 disjointness catches error", check_disjoint),
     ("3 domain + property chain inference", check_inference),
+    ("4 genealogy + nominal inference", check_genealogy),
 ]
 
 
