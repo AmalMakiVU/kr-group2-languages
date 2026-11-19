@@ -5,6 +5,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:core="http://www.semanticweb.org/group2/languages/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:languages="http://www.semanticweb.org/group2/languages/languages#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/group2/languages/languages">
@@ -55,6 +56,25 @@
     
 
 
+    <!-- http://www.semanticweb.org/group2/languages/languages#FreeOrderLanguage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/languages#FreeOrderLanguage">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Language"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/group2/languages/core#hasWordOrder"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/group2/languages/languages#NoDominantOrder"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/group2/languages/languages#IndoEuropeanLanguage -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/languages#IndoEuropeanLanguage">
@@ -65,6 +85,33 @@
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/group2/languages/languages#hasAncestor"/>
                         <owl:hasValue rdf:resource="http://www.semanticweb.org/group2/languages/languages#ProtoIndoEuropean"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#OVLanguage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/languages#OVLanguage">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Language"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/group2/languages/core#hasWordOrder"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/languages#OSV"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/languages#OVS"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/languages#SOV"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -123,6 +170,7 @@
     <!-- http://www.semanticweb.org/group2/languages/languages#French -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#French">
+        <core:hasWordOrder rdf:resource="http://www.semanticweb.org/group2/languages/languages#SVO"/>
         <languages:hasParentLanguage rdf:resource="http://www.semanticweb.org/group2/languages/languages#Latin"/>
     </owl:NamedIndividual>
     
