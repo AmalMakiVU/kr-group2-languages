@@ -370,26 +370,6 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#AdpositionType"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Case"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Country"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#EGIDSLevel"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Feature"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Language"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#LanguageFamily"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#MorphologicalType"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Phoneme"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#PhonemicFeature"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Process"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Region"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Script"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Universal"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#WordOrderType"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Country"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#EGIDSLevel"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Feature"/>

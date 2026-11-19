@@ -82,6 +82,33 @@
     
 
 
+    <!-- http://www.semanticweb.org/group2/languages/languages#VOLanguage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/languages#VOLanguage">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Language"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/group2/languages/core#hasWordOrder"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/languages#SVO"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/languages#VOS"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/languages#VSO"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -109,12 +136,103 @@
     
 
 
+    <!-- http://www.semanticweb.org/group2/languages/languages#NoDominantOrder -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#NoDominantOrder">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#WordOrderType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#OSV -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#OSV">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#WordOrderType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#OVS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#OVS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#WordOrderType"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/group2/languages/languages#ProtoIndoEuropean -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#ProtoIndoEuropean">
         <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/languages#ProtoLanguage"/>
         <languages:hasParentLanguage rdf:resource="http://www.semanticweb.org/group2/languages/languages#ProtoIndoEuropean"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#SOV -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#SOV">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#WordOrderType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#SVO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#SVO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#WordOrderType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#VOS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#VOS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#WordOrderType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/languages#VSO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#VSO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#WordOrderType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#AdpositionType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Case"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#MorphologicalType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Phoneme"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#PhonemicFeature"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Process"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#WordOrderType"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/languages#NoDominantOrder"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/languages#OSV"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/languages#OVS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/languages#SOV"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/languages#SVO"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/languages#VOS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/languages#VSO"/>
+        </owl:distinctMembers>
+    </rdf:Description>
 </rdf:RDF>
 
 
