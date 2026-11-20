@@ -191,7 +191,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/core#usesWritingSystem">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#Country"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/core#WritingSystem"/>
     </owl:ObjectProperty>
     
 

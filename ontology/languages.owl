@@ -179,7 +179,7 @@
     <!-- http://www.semanticweb.org/group2/languages/languages#Latin -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#Latin">
-        <languages:hasParentLanguage rdf:resource="http://www.semanticweb.org/group2/languages/languages#ProtoIndoEuropean"/>
+        <languages:hasParentLanguage rdf:resource="http://www.semanticweb.org/group2/languages/languages#ProtoItalic"/>
     </owl:NamedIndividual>
     
 
@@ -212,9 +212,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#ProtoIndoEuropean">
         <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/languages#ProtoLanguage"/>
-        <languages:hasParentLanguage rdf:resource="http://www.semanticweb.org/group2/languages/languages#ProtoIndoEuropean"/>
     </owl:NamedIndividual>
     
+    <!-- http://www.semanticweb.org/group2/languages/languages#ProtoItalic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/languages#ProtoItalic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/languages#ProtoLanguage"/>
+        <languages:hasParentLanguage rdf:resource="http://www.semanticweb.org/group2/languages/languages#ProtoIndoEuropean"/>
+    </owl:NamedIndividual>
 
 
     <!-- http://www.semanticweb.org/group2/languages/languages#SOV -->
