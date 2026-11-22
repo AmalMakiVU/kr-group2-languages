@@ -70,7 +70,9 @@ hasWordOrder,Roles,role,hasFeature,,,yes,,Amal,
  spokenIn,Roles,role,,,,yes,,Amal,
 English,Individuals,,Language,,,no,,,
  German,Individuals,,Language,,,no,,,
+ Dutch,Individuals,,Language,,,no,,Isabela,
  French,Individuals,individual,Language,,,yes,,Amal,
+ Italian,Individuals,,Language,,,no,,Isabela,
  Latin,Individuals,individual,Language,,,yes,,Amal,
  Hindi,Individuals,,Language,,,no,,,
  Persian,Individuals,,Language,,,no,,,
@@ -84,10 +86,12 @@ English,Individuals,,Language,,,no,,,
  Mandarin,Individuals,,Language,,,no,,,
  Vietnamese,Individuals,,Language,,,no,,,
  Arabic,Individuals,,Language,,,no,,,
+ Amharic,Individuals,,Language,,,no,,Isabela,
  Swahili,Individuals,,Language,,,no,,,
  Zulu,Individuals,,Language,,,no,,,
  Yoruba,Individuals,,Language,,,no,,,
 ProtoIndoEuropean,Individuals,individual,ProtoLanguage,,,yes,,Amal,the exact intermediate nodes from Glottolog
+ProtoItalic,Individuals,individual,ProtoLanguage,,,yes,,Isabela,parent of Latin; child of ProtoIndoEuropean
 ProtoGermanic,Individuals,, ProtoLanguage,,,no,,,the exact intermediate nodes from Glottolog
 ProtoSlavic,Individuals,, ProtoLanguage,,,no,,,the exact intermediate nodes from Glottolog
 ProtoIndoIranian,Individuals,, ProtoLanguage,,,no,,,the exact intermediate nodes from Glottolog
