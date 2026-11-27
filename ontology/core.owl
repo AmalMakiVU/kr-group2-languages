@@ -230,13 +230,17 @@
 
     <!-- http://www.semanticweb.org/group2/languages/core#AdpositionType -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#AdpositionType"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#AdpositionType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Feature"/>
+    </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/group2/languages/core#Case -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#Case"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#Case">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Feature"/>
+    </owl:Class>
     
 
 
@@ -272,25 +276,33 @@
 
     <!-- http://www.semanticweb.org/group2/languages/core#MorphologicalType -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#MorphologicalType"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#MorphologicalType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Feature"/>
+    </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/group2/languages/core#Phoneme -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#Phoneme"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#Phoneme">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Feature"/>
+    </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/group2/languages/core#PhonemicFeature -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#PhonemicFeature"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#PhonemicFeature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Feature"/>
+    </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/group2/languages/core#Process -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#Process"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Feature"/>
+    </owl:Class>
     
 
 
@@ -316,7 +328,9 @@
 
     <!-- http://www.semanticweb.org/group2/languages/core#WordOrderType -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#WordOrderType"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/core#WordOrderType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Feature"/>
+    </owl:Class>
     
 
 
@@ -351,6 +365,18 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#AdpositionType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Case"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#MorphologicalType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Phoneme"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#PhonemicFeature"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Process"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#WordOrderType"/>
+        </owl:members>
+    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
