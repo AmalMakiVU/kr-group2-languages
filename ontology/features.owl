@@ -45,6 +45,38 @@
     
 
 
+    <!-- http://www.semanticweb.org/group2/languages/core#Vowel -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Vowel">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/group2/languages/features#Consonant"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/features#Click -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#Click">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/features#MarkedConsonant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/features#Consonant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#Consonant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Phoneme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/features#Ejective -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#Ejective">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/features#MarkedConsonant"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/group2/languages/features#LargeVowelInventoryLanguage -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#LargeVowelInventoryLanguage">
@@ -59,6 +91,23 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/features#MarkedConsonant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#MarkedConsonant">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#Click"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#Ejective"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#Pharyngeal"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/features#Consonant"/>
     </owl:Class>
     
 
@@ -100,6 +149,14 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/features#Pharyngeal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#Pharyngeal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/features#MarkedConsonant"/>
     </owl:Class>
     
 
@@ -272,6 +329,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#Click"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#Ejective"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#Pharyngeal"/>
+        </owl:members>
+    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
