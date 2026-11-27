@@ -62,7 +62,9 @@ def load(path: Path):
         owl.onto_path.append(str(path.parent))
     world = owl.World()
     try:
-        onto = world.get_ontology(path.as_uri()).load()
+        # pass the open file: on Windows owlready2 turns file:///C:/... into the invalid path /C:/...
+        with open(path, "rb") as f:
+            onto = world.get_ontology(path.as_uri()).load(fileobj=f)
     except Exception as e:  # corrupted / not RDF/XML
         raise CheckError(f"could not read {path.name} (corrupted or wrong format?): {e}")
     return world, onto
