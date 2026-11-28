@@ -25,6 +25,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/group2/languages/core#hasAdposition -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#hasAdposition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+    
+
+
     <!-- http://www.semanticweb.org/group2/languages/core#hasMorphType -->
 
     <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#hasMorphType">
@@ -390,6 +398,31 @@
     
 
 
+    <!-- http://www.semanticweb.org/group2/languages/features#Universal4Violator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#Universal4Violator">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Language"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/group2/languages/features#VOLanguage"/>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/group2/languages/core#hasAdposition"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/group2/languages/features#Prepositions"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/group2/languages/core#hasWordOrder"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/group2/languages/features#SOV"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/group2/languages/features#VOLanguage -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#VOLanguage">
@@ -547,6 +580,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/group2/languages/features#NoDominantAdposition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#NoDominantAdposition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#AdpositionType"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/group2/languages/features#NoFixedStress -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#NoFixedStress">
@@ -595,6 +636,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/group2/languages/features#Postpositions -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#Postpositions">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#AdpositionType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/features#Prepositions -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#Prepositions">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#AdpositionType"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/group2/languages/features#SOV -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#SOV">
@@ -623,24 +680,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#SmallVowelInventory">
         <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/features#VowelInventorySize"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/group2/languages/features#TestEnglish -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#TestEnglish">
-        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
-        <features:hasStress rdf:resource="http://www.semanticweb.org/group2/languages/features#NoFixedStress"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/group2/languages/features#TestFinnish -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#TestFinnish">
-        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
-        <features:hasStress rdf:resource="http://www.semanticweb.org/group2/languages/features#InitialStress"/>
     </owl:NamedIndividual>
     
 
@@ -699,6 +738,14 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#ComplexTone"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#NoTones"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#SimpleTone"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#NoDominantAdposition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#Postpositions"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#Prepositions"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
