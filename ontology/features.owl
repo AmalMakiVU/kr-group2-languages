@@ -33,6 +33,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/group2/languages/features#hasStress -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/features#hasStress">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/group2/languages/core#hasPhonemicFeature"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/group2/languages/features#StressType"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/group2/languages/features#hasTone -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/group2/languages/features#hasTone">
@@ -85,26 +96,6 @@
     <!-- http://www.semanticweb.org/group2/languages/features#ConcatenativeLanguage -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#ConcatenativeLanguage">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Language"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/group2/languages/core#hasMorphType"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:oneOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#AblautConcatenative"/>
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#ExclusivelyConcatenative"/>
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#IsolatingConcatenative"/>
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#TonalConcatenative"/>
-                                </owl:oneOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
     </owl:Class>
     
@@ -126,21 +117,21 @@
     
 
 
-    <!-- http://www.semanticweb.org/group2/languages/features#IsolatingLanguage -->
+    <!-- http://www.semanticweb.org/group2/languages/features#FixedStressLanguage -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#IsolatingLanguage">
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#FixedStressLanguage">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Language"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/group2/languages/core#hasMorphType"/>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/group2/languages/features#hasStress"/>
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:oneOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#ExclusivelyIsolating"/>
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#IsolatingConcatenative"/>
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#TonalIsolating"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#FinalStress"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#InitialStress"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#PenultimateStress"/>
                                 </owl:oneOf>
                             </owl:Class>
                         </owl:someValuesFrom>
@@ -148,6 +139,14 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/group2/languages/features#NoFixedStressLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/features#IsolatingLanguage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#IsolatingLanguage">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
     </owl:Class>
     
@@ -244,6 +243,24 @@
     
 
 
+    <!-- http://www.semanticweb.org/group2/languages/features#NoFixedStressLanguage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#NoFixedStressLanguage">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#Language"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/group2/languages/features#hasStress"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/group2/languages/features#NoFixedStress"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/group2/languages/features#NonTonalLanguage -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#NonTonalLanguage">
@@ -311,6 +328,14 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/features#StressType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#StressType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/group2/languages/core#PhonemicFeature"/>
     </owl:Class>
     
 
@@ -490,6 +515,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/group2/languages/features#FinalStress -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#FinalStress">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/features#StressType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/features#InitialStress -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#InitialStress">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/features#StressType"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/group2/languages/features#IsolatingConcatenative -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#IsolatingConcatenative">
@@ -502,6 +543,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#LargeVowelInventory">
         <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/features#VowelInventorySize"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/features#NoFixedStress -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#NoFixedStress">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/features#StressType"/>
     </owl:NamedIndividual>
     
 
@@ -526,6 +575,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#OVS">
         <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#WordOrderType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/group2/languages/features#PenultimateStress -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#PenultimateStress">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/features#StressType"/>
     </owl:NamedIndividual>
     
 
@@ -570,18 +627,20 @@
     
 
 
-    <!-- http://www.semanticweb.org/group2/languages/features#TonalConcatenative -->
+    <!-- http://www.semanticweb.org/group2/languages/features#TestEnglish -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#TonalConcatenative">
-        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#MorphologicalType"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#TestEnglish">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+        <features:hasStress rdf:resource="http://www.semanticweb.org/group2/languages/features#NoFixedStress"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/group2/languages/features#TonalIsolating -->
+    <!-- http://www.semanticweb.org/group2/languages/features#TestFinnish -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#TonalIsolating">
-        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#MorphologicalType"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#TestFinnish">
+        <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/core#Language"/>
+        <features:hasStress rdf:resource="http://www.semanticweb.org/group2/languages/features#InitialStress"/>
     </owl:NamedIndividual>
     
 
@@ -640,18 +699,6 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#ComplexTone"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#NoTones"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#SimpleTone"/>
-        </owl:distinctMembers>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#EjectiveConsonant"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#ExclusivelyConcatenative"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#ExclusivelyIsolating"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#ExclusivelyTonal"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#IsolatingConcatenative"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#TonalConcatenative"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/features#TonalIsolating"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
