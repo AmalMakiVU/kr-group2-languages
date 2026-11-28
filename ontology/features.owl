@@ -207,6 +207,28 @@
     
 
 
+    <!-- http://www.semanticweb.org/group2/languages/features#MixedMorphologyFamily -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#MixedMorphologyFamily">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/group2/languages/core#LanguageFamily"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/group2/languages/core#hasMember"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/group2/languages/features#ConcatenativeLanguage"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/group2/languages/core#hasMember"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/group2/languages/features#IsolatingLanguage"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/group2/languages/features#NoDominantOrderLanguage -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/group2/languages/features#NoDominantOrderLanguage">
@@ -544,24 +566,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#SmallVowelInventory">
         <rdf:type rdf:resource="http://www.semanticweb.org/group2/languages/features#VowelInventorySize"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/group2/languages/features#TestVietnamese -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#TestVietnamese">
-        <core:hasMorphType rdf:resource="http://www.semanticweb.org/group2/languages/features#ExclusivelyIsolating"/>
-        <features:hasTone rdf:resource="http://www.semanticweb.org/group2/languages/features#ComplexTone"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/group2/languages/features#TestZulu -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/group2/languages/features#TestZulu">
-        <core:hasMorphType rdf:resource="http://www.semanticweb.org/group2/languages/features#ExclusivelyConcatenative"/>
-        <features:hasTone rdf:resource="http://www.semanticweb.org/group2/languages/features#ComplexTone"/>
     </owl:NamedIndividual>
     
 
